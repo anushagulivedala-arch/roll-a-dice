@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll a Dice</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: (135deg, #667eea, #764ba2);
+            height: 100vh;
+            display:grid;
+            justify-content: center;
+            align-items: center;
+            background-image: url(dice\ 3.jfif);
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            height: 300px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        #dice {
+            font-size: 100px;
+            margin: 20px;
+        }
+
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            margin: 20px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4c5fd5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container ">
+        <h1>🎲 Roll the Dice</h1>
+
+        <div id="dice">⚀</div>
+
+        <div id="result">Click the button to roll!</div>
+
+        <button onclick="rollDice()">Roll Dice</button>
+        
+    </div>
+
+    <script>
+        function rollDice() {
+            const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+            const randomNumber = Math.floor(Math.random() * 6);
+
+            document.getElementById("dice").textContent =
+                diceFaces[randomNumber];
+
+            document.getElementById("result").textContent =
+                "You rolled: " + (randomNumber + 1);
+                
+        }
+    </script>
+
+</body>
+</html>

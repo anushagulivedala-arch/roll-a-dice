@@ -1,0 +1,35 @@
+const dice = document.getElementById("dice");
+const result = document.getElementById("result");
+const rollButton = document.getElementById("rollButton");
+
+const diceFaces = [
+"⚀",
+"⚁",
+"⚂",
+"⚃",
+"⚄",
+"⚅"
+];
+
+rollButton.addEventListener("click", function () {
+
+// Generate a random number between 1 and 6
+const randomNumber = Math.floor(Math.random() * 6) + 1;
+
+// Display the dice face
+dice.textContent="diceFaces[randomNumber - 1]";
+
+// Display the result
+result.textContent = "You rolled: " + randomNumber;
+
+
+}
+Roll-a-Dice
+│
+├── index.html
+│
+├── css
+│   └── style.css
+│
+└── js
+    └── script.js
